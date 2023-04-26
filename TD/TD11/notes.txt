@@ -1,0 +1,105 @@
+TD11
+________________________________________________________________________________________________________________
+
+EXERCICE 1 :
+
+1)id 
+2)id Malena
+3)who
+4)echo $SHELL  : shell utilisé par défaut dans le système
+  echo $0      : shell utilisé actuellement
+
+________________________________________________________________________________________________________________
+
+EXERCICE 2 :
+
+1) cat /etc/passwd | cut -d: -f1
+
+2) cat /etc/group
+3) superutilisateur : sudo -i
+   password root
+   su
+4) cp /etc/passwd /etc/group /etc/shadow /etc/gshadow Sauvegarde
+5)
+a) 
+groupadd -g 1025 LINUX 
+groupadd -g 1026 WINDOWS
+groupadd -g 1027 GroupeD
+groupadd -g 1028 GroupeV
+   
+b)
+mkdir /home/{LINUX, WINDOWS}
+
+c)
+useradd Malena --uid 1040 --home /home/linux/malena --create-home --groups LINUX --gid LINUX --shell /bin/bash
+useradd Antoine --uid 2022 --home /home/linux/antoine --create-home --groups LINUX --gid LINUX --shell /bin/bash
+useradd Xavier --uid 2023 --home /home/linux/xavier --create-home --groups LINUX --gid LINUX --shell /bin/bash
+
+useradd Vincent --uid 2024 --home /home/windows/vincent --create-home --groups WINDOWS --gid WINDOWS --shell /bin/bash
+useradd David --uid 2025 --home /home/windows/david --create-home --groups WINDOWS --gid WINDOWS --shell /bin/bash
+
+7) passwd Malena
+8) chage Malena
+
+___________________________________________________________________________________________________________________
+
+EXERCICE 3 :
+
+1)
+chmod se lit de droite à gauche
+chmod 44 emptyfile modifie les droits pour group et others, et pas utilisateur
+
+2)
+non, parce qu'on ne peut pas executer si on a pas la lecture, sauf si c'est un exécutable
+(on peut l'executer quand la lecture est autorisée)
+
+3) seul le processus qui l'a créé peut supp
+
+4) le s passe en majuscule, retire le droit d'exec (ajout : utiliser u/g/o+)
+Un s minuscule sur le premier groupe de permissions signifie que l'utilisateur qui possède le fichier a 
+des permissions d'exécution et que le bit SUID est activé. Un S majuscule signifie que l'utilisateur qui 
+possède le fichier n'a pas ( - ) les permissions d'exécution et que le bit SUID est activé.
+Le sticky bit sur un répertoire empêche que les fichiers d'un répertoire inscriptible par tous soient 
+supprimés ou déplacés par un autre utilisateur que le propriétaire du fichier, ou le rôle root. 
+
+5) chmod 2777 Box
+
+_________________________________________________________________________________________________________________
+
+EXERCICE 4 :
+
+1) créer l'utilisateur dave avec son répertoire personnel
+2) 
+3)
+4) groupadd ...
+5) useradd ...
+6) 
+7) user read and write
+	grp : read
+ 	autres : read pour group et passwrd
+8) sticky bit, seul le propriétaire peut supprimer les fichiers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
