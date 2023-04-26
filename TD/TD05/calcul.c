@@ -25,3 +25,4 @@ int main (int argc, char *argv[])
 	printf("Resultat : %f\n", result);
 	return(result);
 }
+
