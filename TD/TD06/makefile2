@@ -1,0 +1,14 @@
+OBJS = teststring.o mystr.o mystrinv.o mystrshow.o 
+CC = gcc
+
+
+edit : $(OBJS)
+	$(CC) -o $@ $(OBJS)
+
+teststring.o : mystrchrn.h mystrinv.h mystrshow.h
+mystr.o : mystrchrn.h
+mystrinv.o : mystrinv.h
+mystrshow.o : mystrshow.h
+
+clean :
+	rm edit *.o

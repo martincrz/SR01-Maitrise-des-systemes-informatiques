@@ -1,0 +1,19 @@
+edit : teststring.o mystr.o mystrinv.o mystrshow.o 
+	gcc -o edit teststring.o mystr.o mystrinv.o mystrshow.o 
+
+teststring.o : teststring.c mystrchrn.h mystrinv.h mystrshow.h
+	gcc -c teststring.c
+
+mystr.o : mystr.c mystrchrn.h
+	gcc -c mystr.c
+
+mystrinv.o : mystrinv.c mystrinv.h
+	gcc -c mystrinv.c
+
+mystrshow.o : mystrshow.c mystrshow.h
+	gcc -c mystrshow.c
+
+clean :
+	rm edit teststring.o mystr.o mystrinv.o mystrshow.o 
+
+
